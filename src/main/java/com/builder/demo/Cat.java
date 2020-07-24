@@ -1,5 +1,6 @@
 package com.builder.demo;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import lombok.*;
@@ -9,6 +10,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Cat {
+	@JsonUnwrapped
 	private Pet pet;
 	private int lives;
 

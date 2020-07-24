@@ -26,9 +26,10 @@ class DemoApplicationTests {
 		String jsonString = objectMapper.writeValueAsString(cat);
 
 		Assertions.assertEquals(
-        "{\"pet\":{\"name\":\"Maya\",\"owner\":\"Yamil\",\"age\":2},\"lives\":9}", jsonString);
+        "{\"name\":\"Maya\",\"owner\":\"Yamil\",\"age\":2,\"lives\":9}", jsonString);
 
 		// Deserialize
+		// TODO: Does not work!!
 		cat = objectMapper.readValue(jsonString, Cat.class);
 
 		Assertions.assertEquals("Maya", cat.getPet().getName());
